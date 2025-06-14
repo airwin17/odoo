@@ -1,19 +1,16 @@
 from odoo import fields,models
 
 class sparePart(models.Model):
-    _name = "sparepart.sparepart"
+    _name = "sparepart_sparepart"
     _description="this is fondamantal class of this module"
-    id: int= fields.Integer("ID",required=True)
-    name: str=fields.Char("Name",translate=True, required=True,)
-    referece_code:str=fields.Char()
-    description: str= fields.Text("description")
-    tags: list= fields.Many2many(
-        comodel_name="tag",
-        relation="sparepart_tags_rel",
-        column1="sparepart_id",
-        column2="tag_id"
+    name= fields.Char("Name", required=True,)
+    reference_code= fields.Char()
+    description= fields.Text("Description")
+    tags= fields.Many2many(
+        comodel_name="sparepart_tag",   
     )
-    image_url: str= fields.Char()
-    quantity: int= fields.Integer()
-    location: str= fields.Char()
-    minimal_quantity: int= fields.Integer()
+    image_url= fields.Char()
+    quantity= fields.Integer()
+    location= fields.Char()
+    minimal_quantity= fields.Integer()
+    selling_price= fields.Integer("Selling Price")
