@@ -19,5 +19,6 @@
         'security/ir.model.access.csv',
         'views/sparepart_view.xml',
         'views/sparepart_inventory_view.xml',
+        'views/sparepart_tags_view.xml',
     ]
 }

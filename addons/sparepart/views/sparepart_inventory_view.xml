@@ -3,8 +3,12 @@
     <record id="sparepart_view_list" model="ir.ui.view">
         <field name="model">sparepart_sparepart</field>
         <field name="arch" type="xml">
-            <list string="Spareparts" open_form_view="true" editable="top">
+            <list string="Spareparts" open_form_view="true" create="false" edit="false" duplicate="false">
+                <header>
+                    <button name="action_create_sparepart" type="object" display="always" string="Create Sparepart" class="btn-primary"/>
+                </header>
                 <field name="name" string="Name"/>
+                <field name="tag_ids" string="Tags" widget="many2many_tags"/>
                 <field name="reference_code" string="Reference Code"/>
                 <field name="quantity" string="Quantity"/>
                 <field name="location" string="Location"/>
@@ -14,16 +18,24 @@
         </field>
     </record>
     <record id="sparepart_view_form" model="ir.ui.view">
-        <field name="name">sparepart_sparepart_form</field>
         <field name="model">sparepart_sparepart</field>
         <field name="arch" type="xml">
-            <form string="Sparepart">
-                <sheet>
-                    <group>
-                        <field name="name"/>
-                        <field name="description"/>
-                    </group>
-                </sheet>
+            <form string="Sparepart" create="false" >
+            <header>
+                <button string="Discard" type="object" class="btn-secondary" special="cancel"/>
+            </header>
+            <sheet>
+                <group>
+                <field name="name" string="Name"/>
+                <field name="description" string="Description"/>
+                <field name="tag_ids" string="Tags" widget="many2many_tags"/>
+                <field name="reference_code" string="Reference Code"/>
+                <field name="quantity" string="Quantity"/>
+                <field name="location" string="Location"/>
+                <field name="minimal_quantity" string="Minimal Quantity"/>
+                <field name="selling_price" string="Selling Price"/>
+                </group>
+            </sheet>
             </form>
         </field>
     </record>

@@ -6,11 +6,14 @@ class sparePart(models.Model):
     name= fields.Char("Name", required=True,)
     reference_code= fields.Char()
     description= fields.Text("Description")
-    tags= fields.Many2many(
-        comodel_name="sparepart_tag",   
+    tag_ids = fields.Many2many(
+        comodel_name="sparepart_tag",
+        string="Tags",
     )
     image_url= fields.Char()
     quantity= fields.Integer()
     location= fields.Char()
     minimal_quantity= fields.Integer()
     selling_price= fields.Integer("Selling Price")
+    def action_create_sparepart(self):
+        print("Create Sparepart button clicked")

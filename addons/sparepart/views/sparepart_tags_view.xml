@@ -1,0 +1,11 @@
+<odoo>
+    <record id="sparepart_tag_view_list" model="ir.ui.view">
+        <field name="model">sparepart_tag</field>
+        <field name="arch" type="xml">
+            <list string="Tags" open_form_view="true" duplicate="false">
+                <field name="name"/>
+                <field name="tag_type" />
+            </list>
+        </field>
+    </record>
+</odoo>
