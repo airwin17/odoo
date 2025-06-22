@@ -12,6 +12,10 @@ class tag(models.Model):
         ("brand", "Brand"),
         ("model", "Model"),
         ("type", "Type"),
+        ("size", "Size"),
+        ("color", "Color"),
+        ("material", "Material"),
+        ("condition", "Condition"),
         ("other", "Other")
     ],required=True, string="Tag type")
     def create(self, vals):

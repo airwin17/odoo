@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="sparepart_view_list" model="ir.ui.view">
-        <field name="model">sparepart_sparepart</field>
+        <field name="model">sparepart_product</field>
         <field name="arch" type="xml">
-            <list string="Spareparts" open_form_view="true" create="false" edit="false" duplicate="false">
+            
+            <list string="Spareparts" open_form_view="true" create="true" edit="false" duplicate="false">
                 <header>
-                    <button name="action_create_sparepart" type="object" display="always" string="Create Sparepart" class="btn-primary"/>
+                    <button name="action_create_sparepart" display="always" string="Discard" type="object" class="btn-secondary" />
                 </header>
                 <field name="name" string="Name"/>
                 <field name="tag_ids" string="Tags" widget="many2many_tags"/>
@@ -18,13 +19,13 @@
         </field>
     </record>
     <record id="sparepart_view_form" model="ir.ui.view">
-        <field name="model">sparepart_sparepart</field>
+        <field name="model">sparepart_product</field>
         <field name="arch" type="xml">
             <form string="Sparepart" create="false" >
-            <header>
-                <button string="Discard" type="object" class="btn-secondary" special="cancel"/>
-            </header>
             <sheet>
+                <header>
+                    <button name="action_create_sparepart" display="always" string="Discard" type="object" class="btn-secondary" />
+                </header>
                 <group>
                 <field name="name" string="Name"/>
                 <field name="description" string="Description"/>

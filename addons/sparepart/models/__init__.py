@@ -1,2 +1,2 @@
-from . import sparepart
+from . import product
 from . import tag

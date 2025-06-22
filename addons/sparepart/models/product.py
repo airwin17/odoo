@@ -1,7 +1,7 @@
 from odoo import fields,models
 
 class sparePart(models.Model):
-    _name = "sparepart_sparepart"
+    _name = "sparepart_product"
     _description="this is fondamantal class of this module"
     name= fields.Char("Name", required=True,)
     reference_code= fields.Char()
@@ -15,5 +15,7 @@ class sparePart(models.Model):
     location= fields.Char()
     minimal_quantity= fields.Integer()
     selling_price= fields.Integer("Selling Price")
+    published= fields.Boolean("Published", default=False)
+    
     def action_create_sparepart(self):
         print("Create Sparepart button clicked")
